@@ -9,20 +9,23 @@ public class SwaggerClassGenerator {
 
 		try {
 			File file = new File(path);
-			file.createNewFile();
-			FileWriter writer = new FileWriter(file);
-			writer.write(data);
-			writer.flush();
-			writer.close();
 
-			return path;
+			if (file.exists()) {
+				return path;
+			} else {
+				file.createNewFile();
+				FileWriter writer = new FileWriter(file);
+				writer.write(data);
+				writer.flush();
+				writer.close();
+
+				return path;
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-		return null;
-
+		return path;
 	}
 
 }

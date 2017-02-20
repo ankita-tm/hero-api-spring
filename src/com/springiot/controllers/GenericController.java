@@ -5891,4 +5891,26 @@ public class GenericController {
 		return message;
 	}
 
+	/**
+	 * To Get Holiday Calendar
+	 * 
+	 * @param map::::Contains
+	 *            all the parameters.
+	 * 
+	 * @return Return the response message
+	 */
+	@ApiOperation(value = "/hero/final/report/ro/horn/get/vendor", notes = "To get the Final Report Horn Vendor", response = HeroFinalReportRoHornGetVendorSwagger.class)
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
+			@ApiResponse(code = 201, message = " created successfully"),
+			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
+			@ApiResponse(code = 409, message = "ID already taken") })
+	@ApiImplicitParams({
+			@ApiImplicitParam(name = "token", value = "Token is generated to authenticate the device", required = true, access = "query", paramType = "query"),
+			@ApiImplicitParam(name = "start_date ", value = "Required Start Date", required = true, access = "query", paramType = "query"),
+			@ApiImplicitParam(name = "end_date ", value = "Required End Date", required = true, access = "query", paramType = "query") })
+	@RequestMapping(value = "/hero/final/report/ro/horn/get/vendor", method = RequestMethod.POST)
+	public @ResponseBody Message heroFinalReportRoHornGetVendor(@ApiIgnore @RequestParam Map<String, String> map) {
+		Message message = genericProcess.GenericProcedureCalling("341", map, null);
+		return message;
+	}
 }
