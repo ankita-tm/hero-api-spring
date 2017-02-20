@@ -234,7 +234,7 @@ public class MappingHandlerService {
 				String responsedata = templateReport.TemplateReportFile("template/swagger.vm",
 						templateMap);
 
-				String path = "/home/tanvigarg/Documents/eclipse-workspace/ThirdPartyHeroApplication/src/com/springiot/swagger/response/"
+				String path = "/home/tanvigarg/Documents/eclipse-workspace/hero-api-spring/src/com/springiot/swagger/response/"
 						+ templateMap.get("name") + ".java";
 				System.out.println(responsedata);
 				String value = SwaggerClassGenerator.generatePDF(responsedata, path);

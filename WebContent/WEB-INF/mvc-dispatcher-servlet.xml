@@ -716,6 +716,7 @@
 					value="call hero_final_report_shower_starter_update_relay(?)" />
 				<entry key="339" value="call hero_final_report_get_lock(?,?,?,?)" />
 				<entry key="340" value="call hero_final_report_lock_update(?)" />
+				<entry key="341" value="call hero_final_report_ro_horn_get_vendor(?,?)" />
 			</map>
 		</property>
 	</bean>
