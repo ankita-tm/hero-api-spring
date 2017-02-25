@@ -2,54 +2,47 @@
 *This Package contain all the classes of responses of API for swagger
 */
 package com.springiot.swagger.response;
-
 /**
  * To Import Classes to access their functionality
  */
 import java.util.List;
-
 /**
  * 
- * This class contains response on /hero/final/report/ro/horn/get/vendor API
- * response
+ * This class contains response on /hero/final/report/shower/rear/winker/get/vendor API response
  * 
  * 
  * @author Ankita Shrothi
  *
  */
-public class HeroFinalReportRoHornGetVendorSwagger {
+public class HeroFinalReportShowerRearWinkerGetVendorSwagger {
 	private String description;
-
-	/**
+/**
 	 * @return the description
 	 */
 	public String getDescription() {
 		return description;
 	}
-
-	/**
-	 * @param description
-	 *            the description to set
+/**
+	 * @param description the description to set
 	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	private List<HeroFinalReportRoHornGetVendor> object;
+	private List<HeroFinalReportShowerRearWinkerGetVendor> object;
 
 	/**
 	 * @return the object
 	 */
-	public List<HeroFinalReportRoHornGetVendor> getObject() {
+	public List<HeroFinalReportShowerRearWinkerGetVendor> getObject() {
 		return object;
 	}
-
-	/**
+/**
 	 * To set object
 	 * 
 	 * @param object
 	 */
-	public void setObject(List<HeroFinalReportRoHornGetVendor> object) {
+	public void setObject(List<HeroFinalReportShowerRearWinkerGetVendor> object) {
 		this.object = object;
 	}
 
@@ -63,8 +56,7 @@ public class HeroFinalReportRoHornGetVendorSwagger {
 	public boolean isValid() {
 		return valid;
 	}
-
-	/**
+/**
 	 * To set Object Valid
 	 * 
 	 * @param valid
@@ -73,11 +65,11 @@ public class HeroFinalReportRoHornGetVendorSwagger {
 		this.valid = valid;
 	}
 }
-
 /*
- * TO get response parameter getter setter
- */
-class HeroFinalReportRoHornGetVendor {
+*TO get response parameter getter setter
+*/
+class HeroFinalReportShowerRearWinkerGetVendor {
+
 	private String vendor_code;
 	private String vendor_name;
 	private String vendor_name_code;
