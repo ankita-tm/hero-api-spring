@@ -2,54 +2,47 @@
 *This Package contain all the classes of responses of API for swagger
 */
 package com.springiot.swagger.response;
-
 /**
  * To Import Classes to access their functionality
  */
 import java.util.List;
-
 /**
  * 
- * This class contains response on /hero/final/report/ro/horn/get/vendor API
- * response
+ * This class contains response on /hero/final/report/shower/starter/relay/get/vendor API response
  * 
  * 
  * @author Ankita Shrothi
  *
  */
-public class HeroFinalReportRoHornGetVendorSwagger {
+public class HeroFinalReportShowerStarterRelayGetVendorSwagger {
 	private String description;
-
-	/**
+/**
 	 * @return the description
 	 */
 	public String getDescription() {
 		return description;
 	}
-
-	/**
-	 * @param description
-	 *            the description to set
+/**
+	 * @param description the description to set
 	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	private List<HeroFinalReportRoHornGetVendor> object;
+	private List<HeroFinalReportShowerStarterRelayGetVendor> object;
 
 	/**
 	 * @return the object
 	 */
-	public List<HeroFinalReportRoHornGetVendor> getObject() {
+	public List<HeroFinalReportShowerStarterRelayGetVendor> getObject() {
 		return object;
 	}
-
-	/**
+/**
 	 * To set object
 	 * 
 	 * @param object
 	 */
-	public void setObject(List<HeroFinalReportRoHornGetVendor> object) {
+	public void setObject(List<HeroFinalReportShowerStarterRelayGetVendor> object) {
 		this.object = object;
 	}
 
@@ -63,8 +56,7 @@ public class HeroFinalReportRoHornGetVendorSwagger {
 	public boolean isValid() {
 		return valid;
 	}
-
-	/**
+/**
 	 * To set Object Valid
 	 * 
 	 * @param valid
@@ -73,11 +65,10 @@ public class HeroFinalReportRoHornGetVendorSwagger {
 		this.valid = valid;
 	}
 }
-
 /*
- * TO get response parameter getter setter
- */
-class HeroFinalReportRoHornGetVendor {
+*TO get response parameter getter setter
+*/
+class HeroFinalReportShowerStarterRelayGetVendor {
 	private String vendor_code;
 	private String vendor_name;
 	private String vendor_name_code;
@@ -126,5 +117,6 @@ class HeroFinalReportRoHornGetVendor {
 	public void setVendor_name_code(String vendor_name_code) {
 		this.vendor_name_code = vendor_name_code;
 	}
+
 
 }

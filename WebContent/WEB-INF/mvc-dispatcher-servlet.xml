@@ -717,6 +717,24 @@
 				<entry key="339" value="call hero_final_report_get_lock(?,?,?,?)" />
 				<entry key="340" value="call hero_final_report_lock_update(?)" />
 				<entry key="341" value="call hero_final_report_ro_horn_get_vendor(?,?)" />
+				<entry key="342" value="call hero_final_report_ro_relay_get_vendor(?,?)" />
+				<entry key="343"
+					value="call hero_final_report_ro_side_stand_get_vendor(?,?)" />
+				<entry key="344" value="call hero_final_report_ro_lock_get_vendor(?,?)" />
+				<entry key="345"
+					value="call hero_final_report_shower_tail_lamp_get_vendor(?,?)" />
+				<entry key="346"
+					value="call hero_final_report_shower_head_lamp_get_vendor(?,?)" />
+				<entry key="347"
+					value="call hero_final_report_shower_front_winker_get_vendor(?,?)" />
+				<entry key="348"
+					value="call hero_final_report_shower_rear_winker_get_vendor(?,?)" />
+				<entry key="349"
+					value="call hero_final_report_shower_starter_relay_get_vendor(?,?)" />
+				<entry key="350"
+					value="call hero_final_report_dust_head_lamp_get_vendor(?,?)" />
+				<entry key="351"
+					value="call hero_final_report_dust_tail_lamp_get_vendor(?,?)" />
 			</map>
 		</property>
 	</bean>
