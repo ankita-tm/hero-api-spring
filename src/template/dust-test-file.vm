@@ -293,14 +293,14 @@
 
 		</td>
 		<td colspan="5" rowspan="1" style="padding: 5px 3px 5px 10px; vertical-align: middle; border-right: 2px solid #000000; border-bottom: 2px solid #000000; text-align:center;">
-		#if ($object.signature.image_path_tested_by)
-				<br/><img alt="" align="center" height="30" src="$!object.signature.image_path_tested_by" ><br/>
+		#if ($object.signature.image_path_verified_by)
+				<br/><img alt="" align="center" height="30" src="$!object.signature.image_path_verified_by" ><br/>
 	    	#end
 
 		</td>
 		<td colspan="5" rowspan="1" style="padding: 5px 3px 5px 10px; vertical-align: middle; border-right: 2px solid #000000; border-bottom: 2px solid #000000; text-align:center;">
-		#if ($object.signature.image_path_tested_by)
-				<br/><img alt="" align="center" height="30" src="$!object.signature.image_path_tested_by" ><br/>
+		#if ($object.signature.image_path_approved_by)
+				<br/><img alt="" align="center" height="30" src="$!object.signature.image_path_approved_by" ><br/>
 	    	#end
 
 		</td>

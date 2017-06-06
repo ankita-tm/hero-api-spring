@@ -3692,4 +3692,1096 @@ public class FinalReportServices {
 			return message;
 		}
 	}
+
+	/**
+	 * To Download final report of Speedometer for Shower testing in Pdf.
+	 * 
+	 * @param map
+	 *            : Contains all the parameters.
+	 * @param request
+	 *            : To get userkey,user_id from request header
+	 * @param response
+	 *            : To send response.
+	 * 
+	 * @return Return the response message
+	 */
+	@SuppressWarnings({ "static-access", "unchecked" })
+	public Message submitShowerSpedometerFinalReport(Map<String, String> map, HttpServletRequest req,
+			HttpServletResponse res) {
+		/**
+		 * to get the host url to get images in report
+		 */
+		String Url = req.getRequestURL().toString();
+		String hostUrl = Url.toString().substring(0,Url.indexOf(req.getRequestURI().toString()));
+		//String hostUrl = "http://192.168.1.73:7878";
+		System.out.println(hostUrl);
+
+		StringBuilder builder = new StringBuilder();
+		Message message = new Message();
+
+		/**
+		 * Array of procedure to get the data of reports
+		 */
+		Map<String, Object> filePathMap = new HashMap<>();
+		String procedureId[] = new String[] { "352", "359", "353", "354", "360", "357", "356" };
+		String procedureName[] = new String[] { "header", "grid", "analysis", "conclusion", "result", "signature",
+				"observation" };
+
+		/**
+		 * To get before and after images for each component
+		 */
+		String imageProcedureId[] = new String[] { "355", "355" };
+		String imageProcedureName[] = new String[] { "afterImageN", "beforeImageN" };
+		/*
+		 * To store all the responses of API which will be called to set the
+		 * final report
+		 */
+		List<Map<String, String>> responseList = new ArrayList<Map<String, String>>();
+		/**
+		 * It will store all the Object which will set in template to generated
+		 * pdf in a formatted way
+		 */
+		Map<String, Object> templateMap = new HashMap<>();
+		/*
+		 * To check if token value is null than return error response
+		 */
+		if (map.get("token") == null) {
+
+			message.setDescription("token Needed.");
+			message.setValid(false);
+			return message;
+		}
+
+		try {
+			/**
+			 * To get Logo path
+			 */
+			String logo = customerService.getResource("classpath:template/hero-logo.png").getFile().getAbsolutePath();
+			System.out.println("logo" + logo);
+			/*
+			 * to add Logo in template Map
+			 */
+			templateMap.put("logo", logo);
+			builder.append(logo.toString());
+
+			for (int i = 0; i < procedureId.length; i++) {
+
+				/**
+				 * To get header and Grid Data by calling its API
+				 */
+				if (procedureId[i].equalsIgnoreCase("352") || procedureId[i].equalsIgnoreCase("359")) {
+
+					responseList = (List<Map<String, String>>) genericService.executeProcesure(null,
+							processParameter.getMaps().get(procedureId[i].toString()).toString(), map.get("start_date"),
+							map.get("end_date"), map.get("vendor_code"), map.get("test_number"));
+					System.out.println(procedureName[i] + ": " + procedureName[i] + ":" + responseList);
+					if (responseList != null && responseList.size() > 0) {
+
+						for (int k = 0; k < responseList.size(); k++) {
+							Map<String, String> mapSig = responseList.get(k);
+							for (String key : mapSig.keySet()) {
+
+								String value = String.valueOf(mapSig.get(key));
+
+								if (value.indexOf("tmpFiles") == -1) {
+									responseList.get(k).put(key, value);
+									continue;
+								}
+
+								if (key.equalsIgnoreCase("test_actual_condition_image")) {
+									String imagePath = responseList.get(k).get("test_actual_condition_image");
+									/*
+									 * to get image path with host url;
+									 */
+									String tempFile = URLEncoder
+											.encode(imagePath.substring(imagePath.indexOf("tmpFiles")), "UTF-8");
+									System.out.println("actual condition image: " + tempFile);
+									if (!(responseList.get(k).get("test_actual_condition_image")
+											.equalsIgnoreCase("null"))) {
+										responseList.get(k).put(key,
+												hostUrl + "/" + tempFile.replace("%2F", "/").replace("+", "%20"));
+									} else {
+										responseList.get(k).put(key, "");
+									}
+								}
+								if (key.equalsIgnoreCase("test_condition_as_per_specification_image")) {
+									String imagePath1 = responseList.get(k)
+											.get("test_condition_as_per_specification_image");
+									/*
+									 * to get image path with host url;
+									 */
+									String tempFile1 = URLEncoder
+											.encode(imagePath1.substring(imagePath1.indexOf("tmpFiles")), "UTF-8");
+									System.out.println("specific condition image: " + tempFile1);
+									if (!(responseList.get(k).get("test_condition_as_per_specification_image")
+											.equalsIgnoreCase("null"))) {
+										responseList.get(k).put(key,
+												hostUrl + "/" + tempFile1.replace("%2F", "/").replace("+", "%20"));
+									} else {
+										responseList.get(k).put(key, "");
+									}
+								}
+
+							}
+
+						}
+						/*
+						 * Check size of the list than add in templateMap
+						 */
+						if (responseList.size() > 0) {
+							templateMap.put(procedureName[i], responseList);
+							builder.append(procedureName[i] + ":" + responseList.toString() + "\n");
+						}
+					}
+
+				}
+				/*
+				 * To get signature data
+				 */
+				else if (procedureId[i].equalsIgnoreCase("357")) {
+
+					/**
+					 * To get signature images by calling its API
+					 */
+					responseList = (List<Map<String, String>>) genericService.executeProcesure(null,
+							processParameter.getMaps().get(procedureId[i].toString()).toString(), map.get("start_date"),
+							map.get("end_date"), map.get("vendor_code"), map.get("test_number"));
+					System.out.println(procedureName[i] + ": " + procedureName[i] + ":" + responseList);
+					if (responseList != null && responseList.size() > 0) {
+
+						for (int k = 0; k < responseList.size(); k++) {
+							Map<String, String> mapSig = responseList.get(k);
+							for (String key : mapSig.keySet()) {
+								String value = mapSig.get(key);
+
+								if (value.indexOf("tmpFiles") == -1) {
+									responseList.get(k).put(key, value);
+									continue;
+								}
+
+								String tempFile = URLEncoder
+										.encode(value.substring(value.indexOf("tmpFiles")).replace("\\", "/"), "UTF-8");
+
+								responseList.get(k).put(key,
+										hostUrl + "/" + tempFile.replace("%2F", "/").replace("+", "%20"));
+							}
+
+						}
+						/*
+						 * Check size of the list than add in templateMap
+						 */
+						if (responseList.size() > 0) {
+
+							templateMap.put(procedureName[i], responseList.get(0));
+
+							builder.append(procedureName[i] + ":" + responseList.toString() + "\n");
+						}
+
+					}
+
+				}
+				/*
+				 * To get rest APIs data by calling its API
+				 */
+				else {
+					responseList = (List<Map<String, String>>) genericService.executeProcesure(null,
+							processParameter.getMaps().get(procedureId[i].toString()).toString(), map.get("start_date"),
+							map.get("end_date"), map.get("vendor_code"), map.get("test_number"));
+					System.out.println(procedureId[i] + ": " + procedureName[i] + ":" + responseList);
+					/*
+					 * Check size of the list than add in templateMap
+					 */
+					if (responseList != null && responseList.size() > 0) {
+
+						templateMap.put(procedureName[i], responseList);
+						builder.append(procedureName[i] + ":" + responseList.toString() + "\n");
+					}
+				}
+			}
+
+			int statusBit = 0;
+			for (int i = 0; i < imageProcedureId.length; i++) {
+				/**
+				 * TO call image API to get before and after Images by setting
+				 * their status bit
+				 */
+				if (imageProcedureName[i].trim().toString().equalsIgnoreCase("beforeImageN")) {
+					statusBit = 1;
+				}
+				System.out.println("status bit:- " + statusBit + "===" + imageProcedureName[i] + "/");
+				for (int j = 0; j < 5; j++) {
+
+					responseList = (List<Map<String, String>>) genericService.executeProcesure(null,
+							processParameter.getMaps().get(imageProcedureId[i].toString()).toString(),
+							map.get("start_date"), map.get("end_date"), map.get("vendor_code"), map.get("test_number"),
+							j, statusBit);
+
+					System.out.println(map.get("start_date") + "/" + map.get("end_date") + "/" + map.get("vendor_code")
+							+ "/" + map.get("test_number") + "/" + j + "/" + statusBit + "===" + imageProcedureName[i]
+							+ j + ": " + imageProcedureName[i] + ":" + responseList);
+					/*
+					 * Check size of the list than add in templateMap
+					 */
+					if (responseList != null && responseList.size() > 0) {
+
+						for (int k = 0; k < responseList.size(); k++) {
+							Map<String, String> mapSig = responseList.get(k);
+							for (String key : mapSig.keySet()) {
+
+								String value = String.valueOf(mapSig.get(key));
+
+								if (value.indexOf("tmpFiles") == -1) {
+									responseList.get(k).put(key, value);
+									continue;
+								}
+
+								String imagePath = responseList.get(k).get("image_path");
+								/*
+								 * To get the image path with their host url
+								 */
+								String tempFile = URLEncoder.encode(imagePath.substring(imagePath.indexOf("tmpFiles")),
+										"UTF-8");
+
+								responseList.get(k).put(key,
+										hostUrl + "/" + tempFile.replace("%2F", "/").replace("+", "%20"));
+							}
+
+						}
+						/*
+						 * Check size of the list than add in templateMap
+						 */
+						if (responseList != null && responseList.size() > 0) {
+							templateMap.put(imageProcedureName[i] + j, responseList);
+							builder.append(imageProcedureName[i] + j + ":" + responseList.toString() + "\n");
+						}
+					}
+				}
+
+			}
+			/*
+			 * Check if template map is empty
+			 */
+			if (!templateMap.isEmpty()) {
+				/*
+				 * To print template map
+				 */
+				System.out.println("template Map;- " + templateMap);
+
+				TemplateReport templateReport = new TemplateReport();
+				/*
+				 * To set all the data in template file
+				 */
+				String responsedata = templateReport.TemplateReportFile("template/speedometer-shower.vm", templateMap);
+				/*
+				 * Check if response data is null than return error response
+				 */
+				if (responsedata == null) {
+					message.setDescription(
+							"Execution Fail Because of template: " + builder + "response: " + responsedata);
+					message.setValid(false);
+					return message;
+
+				}
+				/*
+				 * to get the File path in which pdf will be created
+				 */
+				String path = System.getProperty("catalina.home") + File.separator + "webapps/tmpFiles/"
+						+ "Speedometer_Final_Report.pdf";
+
+				System.out.println("html :" + responsedata);
+				/*
+				 * to generate pdf with data and the path of file where it has
+				 * to be write
+				 */
+				String value = PDFGenerator.generateRelayPDF(responsedata, path);
+
+				System.out.println(value);
+				/*
+				 * To check if value is null than error response
+				 */
+				if (value == null) {
+					message.setDescription("Execution Fail Because of PDF Generation: " + builder + "value: " + value);
+					message.setValid(false);
+					return message;
+				}
+
+				filePathMap.put("file", path);
+				filePathMap.put("orignalPath", path);
+
+				try {
+					/**
+					 * To call Escalation API
+					 */
+					Object object = genericService.executeProcesure(null,
+							processParameter.getMaps().get("insertfile").toString(), path, "1058", "0");
+
+					System.out.println(object);
+
+				} catch (Exception e) {
+					/**
+					 * To Print escalation if it comes in process
+					 */
+					System.out.println(e.getMessage());
+				}
+
+			}
+			/*
+			 * return Sucess response
+			 */
+			message.setDescription("Process success");
+			message.setObject(filePathMap);
+			message.setValid(true);
+			return message;
+
+		} catch (
+
+		Exception e) {
+			/*
+			 * Return Error response
+			 */
+			e.printStackTrace();
+			message.setDescription("Execution Fail" + e.getMessage());
+			message.setValid(false);
+			return message;
+		}
+	}
+
+	/**
+	 * To Download final report of Front Winker for Dust testing in Pdf.
+	 * 
+	 * @param map
+	 *            : Contains all the parameters.
+	 * @param request
+	 *            : To get userkey,user_id from request header
+	 * @param response
+	 *            : To send response.
+	 * 
+	 * @return Return the response message
+	 */
+	@SuppressWarnings({ "static-access", "unchecked" })
+	public Message submitDustWinkerFrontFinalReport(Map<String, String> map, HttpServletRequest req,
+			HttpServletResponse res) {
+		/**
+		 * to get the host url to get images in report
+		 */
+		String Url = req.getRequestURL().toString();
+		String hostUrl = Url.toString().substring(0,Url.indexOf(req.getRequestURI().toString()));
+		//String hostUrl = "http://192.168.1.73:7878";
+		System.out.println(hostUrl);
+
+		StringBuilder builder = new StringBuilder();
+		Message message = new Message();
+
+		/**
+		 * Array of procedure to get the data of reports
+		 */
+		Map<String, Object> filePathMap = new HashMap<>();
+		String procedureId[] = new String[] { "376", "373", "374", "375", "379", "380", "378" };
+		String procedureName[] = new String[] { "header", "grid", "analysis", "conclusion", "result", "signature",
+				"observation" };
+
+		/**
+		 * To get before and after images for each component
+		 */
+		String imageProcedureId[] = new String[] { "377", "377" };
+		String imageProcedureName[] = new String[] { "afterImageN", "beforeImageN" };
+		/*
+		 * To store all the responses of API which will be called to set the
+		 * final report
+		 */
+		List<Map<String, String>> responseList = new ArrayList<Map<String, String>>();
+		/**
+		 * It will store all the Object which will set in template to generated
+		 * pdf in a formatted way
+		 */
+		Map<String, Object> templateMap = new HashMap<>();
+		/*
+		 * To check if token value is null than return error response
+		 */
+		if (map.get("token") == null) {
+
+			message.setDescription("token Needed.");
+			message.setValid(false);
+			return message;
+		}
+
+		try {
+			/**
+			 * To get Logo path
+			 */
+			String logo = customerService.getResource("classpath:template/hero-logo.png").getFile().getAbsolutePath();
+			/*
+			 * to add Logo in template Map
+			 */
+			templateMap.put("logo", logo);
+			builder.append(logo.toString());
+
+			for (int i = 0; i < procedureId.length; i++) {
+
+				/**
+				 * To get header and Grid Data by calling its API
+				 */
+				if (procedureId[i].equalsIgnoreCase("373")) {
+
+					responseList = (List<Map<String, String>>) genericService.executeProcesure(null,
+							processParameter.getMaps().get(procedureId[i].toString()).toString(),map.get("vendor_code"), map.get("start_date"),
+							map.get("end_date"),  map.get("test_number"));
+					System.out.println(procedureName[i] + ": " + procedureName[i] + ":" + responseList);
+					if (responseList != null && responseList.size() > 0) {
+
+						/*
+						 * Check size of the list than add in templateMap
+						 */
+						if (responseList.size() > 0) {
+							templateMap.put(procedureName[i], responseList);
+							builder.append(procedureName[i] + ":" + responseList.toString() + "\n");
+						}
+					}
+
+				}
+				if (procedureId[i].equalsIgnoreCase("376")) {
+
+					responseList = (List<Map<String, String>>) genericService.executeProcesure(null,
+							processParameter.getMaps().get(procedureId[i].toString()).toString(), map.get("start_date"),
+							map.get("end_date"), map.get("vendor_code"), map.get("test_number"));
+					System.out.println(procedureName[i] + ": " + procedureName[i] + ":" + responseList);
+					if (responseList != null && responseList.size() > 0) {
+
+						for (int k = 0; k < responseList.size(); k++) {
+							Map<String, String> mapSig = responseList.get(k);
+							for (String key : mapSig.keySet()) {
+
+								String value = String.valueOf(mapSig.get(key));
+
+								if (value.indexOf("tmpFiles") == -1) {
+									responseList.get(k).put(key, value);
+									continue;
+								}
+
+								if (key.equalsIgnoreCase("test_actual_condition_image")) {
+									String imagePath = responseList.get(k).get("test_actual_condition_image");
+									/*
+									 * to get image path with host url;
+									 */
+									String tempFile = URLEncoder
+											.encode(imagePath.substring(imagePath.indexOf("tmpFiles")), "UTF-8");
+
+									if (!(responseList.get(k).get("test_actual_condition_image")
+											.equalsIgnoreCase("null"))) {
+										responseList.get(k).put(key,
+												hostUrl + "/" + tempFile.replace("%2F", "/").replace("+", "%20"));
+									} else {
+										responseList.get(k).put(key, "");
+									}
+								}
+
+								if (key.equalsIgnoreCase("test_condition_as_per_specification_image")) {
+									String imagePath1 = responseList.get(k)
+											.get("test_condition_as_per_specification_image");
+									/*
+									 * to get image path with host url;
+									 */
+									String tempFile1 = URLEncoder
+											.encode(imagePath1.substring(imagePath1.indexOf("tmpFiles")), "UTF-8");
+
+									if (!(responseList.get(k).get("test_condition_as_per_specification_image")
+											.equalsIgnoreCase("null"))) {
+										responseList.get(k).put(key,
+												hostUrl + "/" + tempFile1.replace("%2F", "/").replace("+", "%20"));
+									} else {
+										responseList.get(k).put(key, "");
+									}
+								}
+
+							}
+
+						}
+						/*
+						 * Check size of the list than add in templateMap
+						 */
+						if (responseList.size() > 0) {
+							templateMap.put(procedureName[i], responseList);
+							builder.append(procedureName[i] + ":" + responseList.toString() + "\n");
+						}
+					}
+
+				}
+				/*
+				 * To get signature data
+				 */
+				else if (procedureId[i].equalsIgnoreCase("380")) {
+
+					/**
+					 * To get signature images by calling its API
+					 */
+					responseList = (List<Map<String, String>>) genericService.executeProcesure(null,
+							processParameter.getMaps().get(procedureId[i].toString()).toString(), map.get("start_date"),
+							map.get("end_date"), map.get("vendor_code"), map.get("test_number"));
+					System.out.println(procedureName[i] + ": " + procedureName[i] + ":" + responseList);
+					if (responseList != null && responseList.size() > 0) {
+
+						for (int k = 0; k < responseList.size(); k++) {
+							Map<String, String> mapSig = responseList.get(k);
+							for (String key : mapSig.keySet()) {
+								String value = mapSig.get(key);
+
+								if (value.indexOf("tmpFiles") == -1) {
+									responseList.get(k).put(key, value);
+									continue;
+								}
+
+								String tempFile = URLEncoder
+										.encode(value.substring(value.indexOf("tmpFiles")).replace("\\", "/"), "UTF-8");
+
+								responseList.get(k).put(key,
+										hostUrl + "/" + tempFile.replace("%2F", "/").replace("+", "%20"));
+							}
+
+						}
+						/*
+						 * Check size of the list than add in templateMap
+						 */
+						if (responseList.size() > 0) {
+
+							templateMap.put(procedureName[i], responseList.get(0));
+
+							builder.append(procedureName[i] + ":" + responseList.toString() + "\n");
+						}
+
+					}
+
+				}
+				/*
+				 * To get rest APIs data by calling its API
+				 */
+				else {
+					responseList = (List<Map<String, String>>) genericService.executeProcesure(null,
+							processParameter.getMaps().get(procedureId[i].toString()).toString(), map.get("start_date"),
+							map.get("end_date"), map.get("vendor_code"), map.get("test_number"));
+					System.out.println(procedureId[i] + ": " + procedureName[i] + ":" + responseList);
+					/*
+					 * Check size of the list than add in templateMap
+					 */
+					if (responseList != null && responseList.size() > 0) {
+
+						templateMap.put(procedureName[i], responseList);
+						builder.append(procedureName[i] + ":" + responseList.toString() + "\n");
+					}
+				}
+			}
+
+			int statusBit = 0;
+			for (int i = 0; i < imageProcedureId.length; i++) {
+				/**
+				 * TO call image API to get before and after Images by setting
+				 * their status bit
+				 */
+				if (imageProcedureName[i].trim().toString().equalsIgnoreCase("beforeImageN")) {
+					statusBit = 1;
+				}
+				System.out.println("status bit:- " + statusBit + "===" + imageProcedureName[i] + "/");
+				for (int j = 0; j < 5; j++) {
+
+					responseList = (List<Map<String, String>>) genericService.executeProcesure(null,
+							processParameter.getMaps().get(imageProcedureId[i].toString()).toString(),
+							map.get("start_date"), map.get("end_date"), map.get("vendor_code"), map.get("test_number"),
+							j, statusBit);
+
+					System.out.println(map.get("start_date") + "/" + map.get("end_date") + "/" + map.get("vendor_code")
+							+ "/" + map.get("test_number") + "/" + j + "/" + statusBit + "===" + imageProcedureName[i]
+							+ j + ": " + imageProcedureName[i] + ":" + responseList);
+					/*
+					 * Check size of the list than add in templateMap
+					 */
+					if (responseList != null && responseList.size() > 0) {
+
+						for (int k = 0; k < responseList.size(); k++) {
+							Map<String, String> mapSig = responseList.get(k);
+							for (String key : mapSig.keySet()) {
+
+								String value = String.valueOf(mapSig.get(key));
+
+								if (value.indexOf("tmpFiles") == -1) {
+									responseList.get(k).put(key, value);
+									continue;
+								}
+
+								String imagePath = responseList.get(k).get("image_path");
+								/*
+								 * To get the image path with their host url
+								 */
+								String tempFile = URLEncoder.encode(imagePath.substring(imagePath.indexOf("tmpFiles")),
+										"UTF-8");
+
+								responseList.get(k).put(key,
+										hostUrl + "/" + tempFile.replace("%2F", "/").replace("+", "%20"));
+							}
+
+						}
+						/*
+						 * Check size of the list than add in templateMap
+						 */
+						if (responseList != null && responseList.size() > 0) {
+							templateMap.put(imageProcedureName[i] + j, responseList);
+							builder.append(imageProcedureName[i] + j + ":" + responseList.toString() + "\n");
+						}
+					}
+				}
+
+			}
+			/*
+			 * Check if template map is empty
+			 */
+			if (!templateMap.isEmpty()) {
+				/*
+				 * To print template map
+				 */
+				System.out.println("template Map;- " + templateMap);
+
+				TemplateReport templateReport = new TemplateReport();
+				/*
+				 * To set all the data in template file
+				 */
+				String responsedata = templateReport.TemplateReportFile("template/dust-front-winker.vm", templateMap);
+				/*
+				 * Check if response data is null than return error response
+				 */
+				if (responsedata == null) {
+					message.setDescription(
+							"Execution Fail Because of template: " + builder + "response: " + responsedata);
+					message.setValid(false);
+					return message;
+
+				}
+				/*
+				 * to get the File path in which pdf will be created
+				 */
+				String path = System.getProperty("catalina.home") + File.separator + "webapps/tmpFiles/"
+						+ "Front_Winker_Final_Report.pdf";
+
+				System.out.println("html :" + responsedata);
+				/*
+				 * to generate pdf with data and the path of file where it has
+				 * to be write
+				 */
+				String value = PDFGenerator.generateDustPDF(responsedata, path);
+
+				System.out.println(value);
+				/*
+				 * To check if value is null than error response
+				 */
+				if (value == null) {
+					message.setDescription("Execution Fail Because of PDF Generation: " + builder + "value: " + value);
+					message.setValid(false);
+					return message;
+				}
+
+				filePathMap.put("file", path);
+				filePathMap.put("orignalPath", path);
+
+				try {
+					/**
+					 * To call Escalation API
+					 */
+					Object object = genericService.executeProcesure(null,
+							processParameter.getMaps().get("insertfile").toString(), path, "1059", "0");
+
+					System.out.println(object);
+
+				} catch (Exception e) {
+					/**
+					 * To Print escalation if it comes in process
+					 */
+					System.out.println(e.getMessage());
+				}
+
+			}
+			/*
+			 * return Sucess response
+			 */
+			message.setDescription("Process success");
+			message.setObject(filePathMap);
+			message.setValid(true);
+			return message;
+
+		} catch (Exception e) {
+			/*
+			 * Return Error response
+			 */
+			e.printStackTrace();
+			message.setDescription("Execution Fail" + e.getMessage());
+			message.setValid(false);
+			return message;
+		}
+	}
+
+	/**
+	 * To Download final report of Rear Winker for Dust testing in Pdf.
+	 * 
+	 * @param map
+	 *            : Contains all the parameters.
+	 * @param request
+	 *            : To get userkey, user_id from request header
+	 * @param response
+	 *            : To send response.
+	 * 
+	 * @return Return the response message
+	 */
+	@SuppressWarnings({ "static-access", "unchecked" })
+	public Message submitDustWinkerRearFinalReport(Map<String, String> map, HttpServletRequest req,
+			HttpServletResponse res) {
+		/**
+		 * to get the host url to get images in report
+		 */
+		String Url = req.getRequestURL().toString();
+		String hostUrl = Url.toString().substring(0,Url.indexOf(req.getRequestURI().toString()));
+		//String hostUrl = "http://192.168.1.73:7878";
+		System.out.println(hostUrl);
+
+		StringBuilder builder = new StringBuilder();
+		Message message = new Message();
+
+		/**
+		 * Array of procedure to get the data of reports
+		 */
+		Map<String, Object> filePathMap = new HashMap<>();
+		String procedureId[] = new String[] { "398", "395", "396", "397", "401", "402", "400" };
+		String procedureName[] = new String[] { "header", "grid", "analysis", "conclusion", "result", "signature",
+				"observation" };
+
+		/**
+		 * To get before and after images for each component
+		 */
+		String imageProcedureId[] = new String[] { "399", "399" };
+		String imageProcedureName[] = new String[] { "afterImageN", "beforeImageN" };
+		/*
+		 * To store all the responses of API which will be called to set the
+		 * final report
+		 */
+		List<Map<String, String>> responseList = new ArrayList<Map<String, String>>();
+		/**
+		 * It will store all the Object which will set in template to generated
+		 * pdf in a formatted way
+		 */
+		Map<String, Object> templateMap = new HashMap<>();
+		/*
+		 * To check if token value is null than return error response
+		 */
+		if (map.get("token") == null) {
+
+			message.setDescription("token Needed.");
+			message.setValid(false);
+			return message;
+		}
+
+		try {
+			/**
+			 * To get Logo path
+			 */
+			String logo = customerService.getResource("classpath:template/hero-logo.png").getFile().getAbsolutePath();
+			/*
+			 * to add Logo in template Map
+			 */
+			templateMap.put("logo", logo);
+			builder.append(logo.toString());
+
+			for (int i = 0; i < procedureId.length; i++) {
+
+				/**
+				 * To get header and Grid Data by calling its API
+				 */
+				if (procedureId[i].equalsIgnoreCase("395")) {
+
+					responseList = (List<Map<String, String>>) genericService.executeProcesure(null,
+							processParameter.getMaps().get(procedureId[i].toString()).toString(),map.get("vendor_code"), map.get("start_date"),
+							map.get("end_date"),  map.get("test_number"));
+					System.out.println(procedureName[i] + ": " + procedureName[i] + ":" + responseList);
+					if (responseList != null && responseList.size() > 0) {
+
+						/*
+						 * Check size of the list than add in templateMap
+						 */
+						if (responseList.size() > 0) {
+							templateMap.put(procedureName[i], responseList);
+							builder.append(procedureName[i] + ":" + responseList.toString() + "\n");
+						}
+					}
+
+				}
+				if (procedureId[i].equalsIgnoreCase("398")) {
+
+					responseList = (List<Map<String, String>>) genericService.executeProcesure(null,
+							processParameter.getMaps().get(procedureId[i].toString()).toString(), map.get("start_date"),
+							map.get("end_date"), map.get("vendor_code"), map.get("test_number"));
+					System.out.println(procedureName[i] + ": " + procedureName[i] + ":" + responseList);
+					if (responseList != null && responseList.size() > 0) {
+
+						for (int k = 0; k < responseList.size(); k++) {
+							Map<String, String> mapSig = responseList.get(k);
+							for (String key : mapSig.keySet()) {
+
+								String value = String.valueOf(mapSig.get(key));
+
+								if (value.indexOf("tmpFiles") == -1) {
+									responseList.get(k).put(key, value);
+									continue;
+								}
+
+								if (key.equalsIgnoreCase("test_actual_condition_image")) {
+									String imagePath = responseList.get(k).get("test_actual_condition_image");
+									/*
+									 * to get image path with host url;
+									 */
+									String tempFile = URLEncoder
+											.encode(imagePath.substring(imagePath.indexOf("tmpFiles")), "UTF-8");
+
+									if (!(responseList.get(k).get("test_actual_condition_image")
+											.equalsIgnoreCase("null"))) {
+										responseList.get(k).put(key,
+												hostUrl + "/" + tempFile.replace("%2F", "/").replace("+", "%20"));
+									} else {
+										responseList.get(k).put(key, "");
+									}
+								}
+
+								if (key.equalsIgnoreCase("test_condition_as_per_specification_image")) {
+									String imagePath1 = responseList.get(k)
+											.get("test_condition_as_per_specification_image");
+									/*
+									 * to get image path with host url;
+									 */
+									String tempFile1 = URLEncoder
+											.encode(imagePath1.substring(imagePath1.indexOf("tmpFiles")), "UTF-8");
+
+									if (!(responseList.get(k).get("test_condition_as_per_specification_image")
+											.equalsIgnoreCase("null"))) {
+										responseList.get(k).put(key,
+												hostUrl + "/" + tempFile1.replace("%2F", "/").replace("+", "%20"));
+									} else {
+										responseList.get(k).put(key, "");
+									}
+								}
+
+							}
+
+						}
+						/*
+						 * Check size of the list than add in templateMap
+						 */
+						if (responseList.size() > 0) {
+							templateMap.put(procedureName[i], responseList);
+							builder.append(procedureName[i] + ":" + responseList.toString() + "\n");
+						}
+					}
+
+				}
+				/*
+				 * To get signature data
+				 */
+				else if (procedureId[i].equalsIgnoreCase("402")) {
+
+					/**
+					 * To get signature images by calling its API
+					 */
+					responseList = (List<Map<String, String>>) genericService.executeProcesure(null,
+							processParameter.getMaps().get(procedureId[i].toString()).toString(), map.get("start_date"),
+							map.get("end_date"), map.get("vendor_code"), map.get("test_number"));
+					System.out.println(procedureName[i] + ": " + procedureName[i] + ":" + responseList);
+					if (responseList != null && responseList.size() > 0) {
+
+						for (int k = 0; k < responseList.size(); k++) {
+							Map<String, String> mapSig = responseList.get(k);
+							for (String key : mapSig.keySet()) {
+								String value = mapSig.get(key);
+
+								if (value.indexOf("tmpFiles") == -1) {
+									responseList.get(k).put(key, value);
+									continue;
+								}
+
+								String tempFile = URLEncoder
+										.encode(value.substring(value.indexOf("tmpFiles")).replace("\\", "/"), "UTF-8");
+
+								responseList.get(k).put(key,
+										hostUrl + "/" + tempFile.replace("%2F", "/").replace("+", "%20"));
+							}
+
+						}
+						/*
+						 * Check size of the list than add in templateMap
+						 */
+						if (responseList.size() > 0) {
+
+							templateMap.put(procedureName[i], responseList.get(0));
+
+							builder.append(procedureName[i] + ":" + responseList.toString() + "\n");
+						}
+
+					}
+
+				}
+				/*
+				 * To get rest APIs data by calling its API
+				 */
+				else {
+					responseList = (List<Map<String, String>>) genericService.executeProcesure(null,
+							processParameter.getMaps().get(procedureId[i].toString()).toString(), map.get("start_date"),
+							map.get("end_date"), map.get("vendor_code"), map.get("test_number"));
+					System.out.println(procedureId[i] + ": " + procedureName[i] + ":" + responseList);
+					/*
+					 * Check size of the list than add in templateMap
+					 */
+					if (responseList != null && responseList.size() > 0) {
+
+						templateMap.put(procedureName[i], responseList);
+						builder.append(procedureName[i] + ":" + responseList.toString() + "\n");
+					}
+				}
+			}
+
+			int statusBit = 0;
+			for (int i = 0; i < imageProcedureId.length; i++) {
+				/**
+				 * TO call image API to get before and after Images by setting
+				 * their status bit
+				 */
+				if (imageProcedureName[i].trim().toString().equalsIgnoreCase("beforeImageN")) {
+					statusBit = 1;
+				}
+				System.out.println("status bit:- " + statusBit + "===" + imageProcedureName[i] + "/");
+				for (int j = 0; j < 5; j++) {
+
+					responseList = (List<Map<String, String>>) genericService.executeProcesure(null,
+							processParameter.getMaps().get(imageProcedureId[i].toString()).toString(),
+							map.get("start_date"), map.get("end_date"), map.get("vendor_code"), map.get("test_number"),
+							j, statusBit);
+
+					System.out.println(map.get("start_date") + "/" + map.get("end_date") + "/" + map.get("vendor_code")
+							+ "/" + map.get("test_number") + "/" + j + "/" + statusBit + "===" + imageProcedureName[i]
+							+ j + ": " + imageProcedureName[i] + ":" + responseList);
+					/*
+					 * Check size of the list than add in templateMap
+					 */
+					if (responseList != null && responseList.size() > 0) {
+
+						for (int k = 0; k < responseList.size(); k++) {
+							Map<String, String> mapSig = responseList.get(k);
+							for (String key : mapSig.keySet()) {
+
+								String value = String.valueOf(mapSig.get(key));
+
+								if (value.indexOf("tmpFiles") == -1) {
+									responseList.get(k).put(key, value);
+									continue;
+								}
+
+								String imagePath = responseList.get(k).get("image_path");
+								/*
+								 * To get the image path with their host url
+								 */
+								String tempFile = URLEncoder.encode(imagePath.substring(imagePath.indexOf("tmpFiles")),
+										"UTF-8");
+
+								responseList.get(k).put(key,
+										hostUrl + "/" + tempFile.replace("%2F", "/").replace("+", "%20"));
+							}
+
+						}
+						/*
+						 * Check size of the list than add in templateMap
+						 */
+						if (responseList != null && responseList.size() > 0) {
+							templateMap.put(imageProcedureName[i] + j, responseList);
+							builder.append(imageProcedureName[i] + j + ":" + responseList.toString() + "\n");
+						}
+					}
+				}
+
+			}
+			/*
+			 * Check if template map is empty
+			 */
+			if (!templateMap.isEmpty()) {
+				/*
+				 * To print template map
+				 */
+				System.out.println("template Map;- " + templateMap);
+
+				TemplateReport templateReport = new TemplateReport();
+				/*
+				 * To set all the data in template file
+				 */
+				String responsedata = templateReport.TemplateReportFile("template/dust-rear-winker.vm", templateMap);
+				/*
+				 * Check if response data is null than return error response
+				 */
+				if (responsedata == null) {
+					message.setDescription(
+							"Execution Fail Because of template: " + builder + "response: " + responsedata);
+					message.setValid(false);
+					return message;
+
+				}
+				/*
+				 * to get the File path in which pdf will be created
+				 */
+				String path = System.getProperty("catalina.home") + File.separator + "webapps/tmpFiles/"
+						+ "Rear_Winker_Final_Report.pdf";
+
+				System.out.println("html :" + responsedata);
+				/*
+				 * to generate pdf with data and the path of file where it has
+				 * to be write
+				 */
+				String value = PDFGenerator.generateDustPDF(responsedata, path);
+
+				System.out.println(value);
+				/*
+				 * To check if value is null than error response
+				 */
+				if (value == null) {
+					message.setDescription("Execution Fail Because of PDF Generation: " + builder + "value: " + value);
+					message.setValid(false);
+					return message;
+				}
+
+				filePathMap.put("file", path);
+				filePathMap.put("orignalPath", path);
+
+				try {
+					/**
+					 * To call Escalation API
+					 */
+					Object object = genericService.executeProcesure(null,
+							processParameter.getMaps().get("insertfile").toString(), path, "1060", "0");
+
+					System.out.println(object);
+
+				} catch (Exception e) {
+					/**
+					 * To Print escalation if it comes in process
+					 */
+					System.out.println(e.getMessage());
+				}
+
+			}
+			/*
+			 * return Sucess response
+			 */
+			message.setDescription("Process success");
+			message.setObject(filePathMap);
+			message.setValid(true);
+			return message;
+
+		} catch (Exception e) {
+			/*
+			 * Return Error response
+			 */
+			e.printStackTrace();
+			message.setDescription("Execution Fail" + e.getMessage());
+			message.setValid(false);
+			return message;
+		}
+	}
+
 }

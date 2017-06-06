@@ -262,7 +262,7 @@ public class VendorController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/dust/head/lamp/get/vendor", notes = "To get the Final Report Dust Head Vendor", response = HeroFinalReportDustHeadLampGetVendorSwagger.class)
+	@ApiOperation(value = "/hero/final/report/dust/head/lamp/get/vendor", notes = "To get the Final Report Dust Head Vendor", response = GenericFinalReportGetVendorSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -285,7 +285,7 @@ public class VendorController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/dust/tail/lamp/get/vendor", notes = "To get the Final Report Dust Tail Vendor", response = HeroFinalReportDustTailLampGetVendorSwagger.class)
+	@ApiOperation(value = "/hero/final/report/dust/tail/lamp/get/vendor", notes = "To get the Final Report Dust Tail Vendor", response = GenericFinalReportGetVendorSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -297,6 +297,30 @@ public class VendorController {
 	@RequestMapping(value = "/hero/final/report/dust/tail/lamp/get/vendor", method = RequestMethod.POST)
 	public @ResponseBody Message heroFinalReportRoDustTailGetVendor(@ApiIgnore @RequestParam Map<String, String> map) {
 		Message message = genericProcess.GenericProcedureCalling("351", map, null);
+		return message;
+	}
+
+	/**
+	 * To get the Final Report Dust Tail Vendor
+	 * 
+	 * @param map::::Contains
+	 *            all the parameters.
+	 * 
+	 * @return Return the response message
+	 */
+	@ApiOperation(value = "/hero/final/report/shower/speedometer/get/vendor", notes = "To get the Final Report Dust Tail Vendor", response = GenericFinalReportGetVendorSwagger.class)
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
+			@ApiResponse(code = 201, message = " created successfully"),
+			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
+			@ApiResponse(code = 409, message = "ID already taken") })
+	@ApiImplicitParams({
+			@ApiImplicitParam(name = "token", value = "Token is generated to authenticate the device", required = true, access = "query", paramType = "query"),
+			@ApiImplicitParam(name = "start_date ", value = "Required Start Date", required = true, access = "query", paramType = "query"),
+			@ApiImplicitParam(name = "end_date ", value = "Required End Date", required = true, access = "query", paramType = "query") })
+	@RequestMapping(value = "/hero/final/report/shower/speedometer/get/vendor", method = RequestMethod.POST)
+	public @ResponseBody Message heroFinalReportShowerSpeedometerGetVendor(
+			@ApiIgnore @RequestParam Map<String, String> map) {
+		Message message = genericProcess.GenericProcedureCalling("372", map, null);
 		return message;
 	}
 

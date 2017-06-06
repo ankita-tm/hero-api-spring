@@ -735,6 +735,121 @@
 					value="call hero_final_report_dust_head_lamp_get_vendor(?,?)" />
 				<entry key="351"
 					value="call hero_final_report_dust_tail_lamp_get_vendor(?,?)" />
+				<!-- .......................... get data .............................................. -->
+				<entry key="352"
+					value="call hero_final_report_shower_get_speedometer_header(?,?,?,?)" />
+				<entry key="353"
+					value="call hero_final_report_shower_get_speedometer_analysis(?,?,?,?)" />
+				<entry key="354"
+					value="call hero_final_report_shower_get_speedometer_conclusion(?,?,?,?)" />
+				<entry key="355"
+					value="call hero_final_report_shower_get_speedometer_images(?,?,?,?,?,?)" />
+				<entry key="356"
+					value="call hero_final_report_shower_get_speedometer_observation(?,?,?,?)" />
+				<entry key="357"
+					value="call hero_final_report_shower_get_speedometer_signature(?,?,?,?)" />
+				<entry key="358"
+					value="call hero_final_report_shower_speedometer_get_Version(?,?,?)" />
+				<entry key="359"
+					value="call hero_final_report_shower_get_speedometer_grid(?,?,?,?)" />
+				<entry key="360"
+					value="call hero_final_report_shower_get_speedometer_result(?,?,?,?)" />
+
+
+				<!-- .......................... insert data .............................................. -->
+
+
+				<entry key="361"
+					value="call hero_final_report_shower_insert_speedometer_images(?,?,?,?,?,?,?,?,?)" />
+				<entry key="362"
+					value="call hero_final_report_shower_insert_speedometer_observation(?,?,?,?,?)" />
+				<entry key="363"
+					value="call hero_final_report_shower_insert_speedometer_result(?,?,?,?,?)" />
+				<entry key="364"
+					value="call  hero_final_report_shower_insert_speedometer_signature(?,?,?,?,?,?,?)" />
+				<entry key="365"
+					value="call hero_final_report_shower_insert_speedometer_analysis(?,?,?,?,?)" />
+				<entry key="366"
+					value="call hero_final_report_shower_insert_speedometer_conclusion(?,?,?,?,?)" />
+
+
+
+				<!-- .......................... delete data .............................................. -->
+				<entry key="367"
+					value="call hero_final_report_shower_speedometer_delete_images(?)" />
+				<entry key="368"
+					value="call hero_final_report_shower_speedometer_delete_observation(?)" />
+
+
+				<!-- .......................... update data .............................................. -->
+				<entry key="369"
+					value="call hero_final_report_shower_update_speedometer_grid(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" />
+				<entry key="370"
+					value="call hero_final_report_shower_update_speedometer_final_submit(?,?,?,?,?,?)" />
+				<entry key="371"
+					value="call hero_final_report_shower_update_speedometer_header(?,?,?,?,?,?,?,?,?,?,?,?,?)" />
+				<entry key="372"
+					value="call hero_final_report_shower_speedometer_get_vendor(?,?)" />
+					
+				<!-- Procedures for Final Report of Dust Testing of Front Winker -->
+ 				<!-- procedures for get --> 
+				<entry key="373" value="call hero_final_report_dust_get_winker_front(?,?,?,?)" />
+				<entry key="374" value="call hero_final_report_dust_get_winker_front_analysis(?,?,?,?)" />
+				<entry key="375" value="call hero_final_report_dust_get_winker_front_conclusion(?,?,?,?)" />
+				<entry key="376" value="call hero_final_report_dust_get_winker_front_header(?,?,?,?)" />
+				<entry key="377" value="call hero_final_report_dust_get_winker_front_images(?,?,?,?,?,?)" />
+				<entry key="378" value="call hero_final_report_dust_get_winker_front_observation(?,?,?,?)" />
+				<entry key="379" value="call hero_final_report_dust_get_winker_front_result(?,?,?,?)" />
+				<entry key="380" value="call hero_final_report_dust_get_winker_front_signature(?,?,?,?)" />
+				<entry key="381" value="call hero_final_report_dust_get_winker_front_testing_Version(?,?,?)" />
+				<entry key="382" value="call hero_final_report_dust_get_winker_front_vendor(?,?)" />
+				<!-- Procedures for insert -->
+				<entry key="383" value="call hero_final_report_dust_insert_winker_front_analysis(?,?,?,?,?)" />
+				<entry key="384" value="call hero_final_report_dust_insert_winker_front_conclusion(?,?,?,?,?)" />
+				<entry key="385" value="call hero_final_report_dust_insert_winker_front_images(?,?,?,?,?,?,?,?,?)" />
+				<entry key="386" value="call hero_final_report_dust_insert_winker_front_observation(?,?,?,?,?)" />
+				<entry key="387" value="call hero_final_report_dust_insert_winker_front_result(?,?,?,?,?)" />
+				<entry key="388" value="call hero_final_report_dust_insert_winker_front_signature(?,?,?,?,?,?,?)" />
+				<!-- Procedures for update -->
+				<entry key="389" value="call hero_final_report_dust_update_winker_front(?,?,?,?,?,?,?,?,?,?,?,?)" />
+				<entry key="390" value="call hero_final_report_dust_update_winker_front_final_submit(?,?,?,?,?,?)" />
+				<entry key="391" value="call hero_final_report_dust_update_winker_front_header(?,?,?,?,?,?,?,?,?,?,?,?,?)" />
+				<!-- Procedure for Final Submit -->
+				<entry key="392" value="call hero_final_report_dust_winker_front_final_submit(?,?,?,?,?,?)" />
+				<!-- Procedure for deletion -->
+				<entry key="393" value="call hero_final_report_dust_winker_front_delete_images(?)" />
+				<entry key="394" value="call hero_final_report_dust_winker_front_delete_observation(?)" />
+
+				
+				<!-- Procedures for Final Report of Dust Testing of Rear Winker -->
+ 				<!-- procedures for get --> 
+				<entry key="395" value="call hero_final_report_dust_get_winker_rear(?,?,?,?)" />
+				<entry key="396" value="call hero_final_report_dust_get_winker_rear_analysis(?,?,?,?)" />
+				<entry key="397" value="call hero_final_report_dust_get_winker_rear_conclusion(?,?,?,?)" />
+				<entry key="398" value="call hero_final_report_dust_get_winker_rear_header(?,?,?,?)" />
+				<entry key="399" value="call hero_final_report_dust_get_winker_rear_images(?,?,?,?,?,?)" />
+				<entry key="400" value="call hero_final_report_dust_get_winker_rear_observation(?,?,?,?)" />
+				<entry key="401" value="call hero_final_report_dust_get_winker_rear_result(?,?,?,?)" />
+				<entry key="402" value="call hero_final_report_dust_get_winker_rear_signature(?,?,?,?)" />
+				<entry key="403" value="call hero_final_report_dust_get_winker_rear_testing_Version(?,?,?)" />
+				<entry key="404" value="call hero_final_report_dust_get_winker_rear_vendor(?,?)" />
+				<!-- procedures for insert -->
+				<entry key="405" value="call hero_final_report_dust_insert_winker_rear_analysis(?,?,?,?,?)" />
+				<entry key="406" value="call hero_final_report_dust_insert_winker_rear_conclusion(?,?,?,?,?)" />
+				<entry key="407" value="call hero_final_report_dust_insert_winker_rear_images(?,?,?,?,?,?,?,?,?)" />
+				<entry key="408" value="call hero_final_report_dust_insert_winker_rear_observation(?,?,?,?,?)" />
+				<entry key="409" value="call hero_final_report_dust_insert_winker_rear_result(?,?,?,?,?)" />
+				<entry key="410" value="call hero_final_report_dust_insert_winker_rear_signature(?,?,?,?,?,?,?)" />
+				<!-- procedures for update -->
+				<entry key="411" value="call hero_final_report_dust_update_winker_rear(?,?,?,?,?,?,?,?,?,?,?,?)" />
+				<entry key="412" value="call hero_final_report_dust_update_winker_rear_final_submit(?,?,?,?,?,?)" />
+				<entry key="413" value="call hero_final_report_dust_update_winker_rear_header(?,?,?,?,?,?,?,?,?,?,?,?,?)" />
+				<!-- procedures for final submit -->
+				<entry key="414" value="call hero_final_report_dust_winker_rear_final_submit(?,?,?,?,?,?)" />
+				<!-- Procedure for deletion -->
+				<entry key="415" value="call hero_final_report_dust_winker_rear_delete_images(?)" />
+				<entry key="416" value="call hero_final_report_dust_winker_rear_delete_observation(?)" />
+				
 			</map>
 		</property>
 	</bean>
@@ -747,15 +862,10 @@
 		/> <property name="authForgotPasswordURL" value="http://192.168.1.73:4444/OAuthEngine/forgotpassword" 
 		/> <property name="authUpdateURL" value="http://192.168.1.73:4444/OAuthEngine/passwordupdate" 
 		/> <property name="xfusionURL" value="http://192.168.1.73:4444/XFusionPlatform/xfusionusers" 
-		/> <property name="xfusionPerformanceServiceMultipleDevicesStatusGetMany" 
-		value="http://192.168.1.73:4444/XFusionPlatform/performance/status/multipledevices/get/many" 
-		/> <property name="xfusionPerformanceServiceMultipleDevicesGetMany" value="http://192.168.1.73:4444/XFusionPlatform/performance/service/multipledevices/get/many" 
-		/> <property name="xfusionPerformaneServicestatusDevicesGetMany" value="http://192.168.1.73:4444/XFusionPlatform/performane/servicestatus/devices/get/many" 
-		/> <property name="xfusionDeviceGetByUser" value="http://192.168.1.73:4444/XFusionPlatform/get/device/by/user" 
+		/> 
 		/> </bean> -->
 
 	<!-- URLs for Testing Server Local on 192.168.1.73 -->
-
 	<bean class="com.springiot.constant.URLParameter" id="urlParameter">
 		<property name="authURL"
 			value="http://192.168.1.73:7878/OAuthEngine/oauth/token" />
@@ -771,15 +881,10 @@
 			value="http://192.168.1.73:7878/OAuthEngine/passwordupdate" />
 		<property name="xfusionURL"
 			value="http://192.168.1.73:7878/XFusionPlatform/xfusionusers" />
-		<property name="xfusionPerformanceServiceMultipleDevicesStatusGetMany"
-			value="http://192.168.1.73:7878/XFusionPlatform/performance/status/multipledevices/get/many" />
-		<property name="xfusionPerformanceServiceMultipleDevicesGetMany"
-			value="http://192.168.1.73:7878/XFusionPlatform/performance/service/multipledevices/get/many" />
-		<property name="xfusionPerformaneServicestatusDevicesGetMany"
-			value="http://192.168.1.73:7878/XFusionPlatform/performane/servicestatus/devices/get/many" />
-		<property name="xfusionDeviceGetByUser"
-			value="http://192.168.1.73:7878/XFusionPlatform/get/device/by/user" />
+
 	</bean>
+	
+	<!-- URLs for Azure Server -->
 	<!-- <bean class="com.springiot.constant.URLParameter" id="urlParameter"> 
 		<property name="authURL" value="http://127.0.0.1:7878/OAuthEngine/oauth/token" 
 		/> <property name="xfusionOAuthURL" value="http://127.0.0.1:7878/XFusionPlatform/oauth/token" 
@@ -788,51 +893,11 @@
 		/> <property name="authForgotPasswordURL" value="http://127.0.0.1:7878/OAuthEngine/forgotpassword" 
 		/> <property name="authUpdateURL" value="http://127.0.0.1:7878/OAuthEngine/passwordupdate" 
 		/> <property name="xfusionURL" value="http://127.0.0.1:7878/XFusionPlatform/xfusionusers" 
-		/> <property name="xfusionPerformanceServiceMultipleDevicesStatusGetMany" 
-		value="http://127.0.0.1:7878/XFusionPlatform/performance/status/multipledevices/get/many" 
-		/> <property name="xfusionPerformanceServiceMultipleDevicesGetMany" value="http://127.0.0.1:7878/XFusionPlatform/performance/service/multipledevices/get/many" 
-		/> <property name="xfusionPerformaneServicestatusDevicesGetMany" value="http://127.0.0.1:7878/XFusionPlatform/performane/servicestatus/devices/get/many" 
-		/> <property name="xfusionDeviceGetByUser" value="http://127.0.0.1:7878/XFusionPlatform/get/device/by/user" 
-		/> </bean> -->
+		/></bean> -->
 
-
-
-
-	<!-- <bean name="jobA" class="org.springframework.scheduling.quartz.JobDetailBean"> 
-		<property name="jobClass" value="com.springiot.scheduling.JOBs" /> <property 
-		name="name" value="runmetaskA" /> </bean> <bean id="cronTriggerA" class="org.springframework.scheduling.quartz.CronTriggerBean"> 
-		<property name="jobDetail" ref="jobA" /> <property name="cronExpression" 
-		value="0 0/1 * * * ?" /> </bean> <bean name="jonB" class="org.springframework.scheduling.quartz.JobDetailBean"> 
-		<property name="jobClass" value="com.springiot.scheduling.HeroDailyReportScheduler" 
-		/> <property name="name" value="runmetaskB" /> </bean> <bean id="cronTriggerB" 
-		class="org.springframework.scheduling.quartz.CronTriggerBean"> <property 
-		name="jobDetail" ref="jonB" /> <property name="cronExpression" value="0 0 
-		1 * * ?" /> </bean> <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean"> 
-		<property name="jobDetails" ref="runMeJob"/> <property name="triggers"> <list> 
-		<ref bean="cronTriggerA" /> <ref bean="cronTriggerB" /> </list> </property> 
-		</bean> -->
-
-	<bean name="runMeJob" class="org.springframework.scheduling.quartz.JobDetailBean">
-		<property name="jobClass" value="com.springiot.scheduling.JOBs" />
-
-		<property name="name" value="runmetask" />
-	</bean>
-
-	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
-		<property name="jobDetail" ref="runMeJob" />
-		<property name="cronExpression" value="0 0/2 * * * ?" />
-	</bean>
-
-	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
-		<property name="triggers" ref="cronTrigger" />
-	</bean>
 
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<!-- <property name="fileUploadController" value="com.springiot.com.FileUploadController" 
-			/> -->
-		<!-- setting maximum upload size -->
-		<!-- <property name="maxUploadSize" value="100000" /> -->
 
 	</bean>
 

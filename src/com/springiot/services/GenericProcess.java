@@ -51,6 +51,8 @@ public class GenericProcess {
 	 */
 	public Message GenericProcedureCalling(String requestType, Map<String, String> map,
 			@SuppressWarnings("rawtypes") Class clz) {
+		System.out.println("Input Map : "+ map);
+		
 		/**
 		 * To Inizialize the response Message
 		 */

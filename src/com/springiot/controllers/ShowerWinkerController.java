@@ -76,7 +76,7 @@ public class ShowerWinkerController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/get/front/winker/analysis", notes = "To get Front Winker analysis in Final Report", response = HeroFinalReportShowerGetFrontWinkerAnalysisSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/get/front/winker/analysis", notes = "To get Front Winker analysis in Final Report", response = GenericFinalReportGetAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -102,7 +102,7 @@ public class ShowerWinkerController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/get/front/winker/conclusion", notes = "To get Front Winker conclusion in Final Report", response = HeroFinalReportShowerGetFrontWinkerConclusionSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/get/front/winker/conclusion", notes = "To get Front Winker conclusion in Final Report", response = GenericFinalReportGetConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -182,7 +182,7 @@ public class ShowerWinkerController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/get/front/winker/observation", notes = "To get Front Winker Observation in Final Report", response = HeroFinalReportShowerGetFrontWinkerObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/get/front/winker/observation", notes = "To get Front Winker Observation in Final Report", response = GenericFinalReportGetObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -310,7 +310,7 @@ public class ShowerWinkerController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/front/winker/insert/analysis", notes = "To insert Analysis in Front Winker Final Report", response = HeroFinalReportShowerFrontWinkerInsertAnalysisSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/front/winker/insert/analysis", notes = "To insert Analysis in Front Winker Final Report", response = GenericFinalReportInsertAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -337,7 +337,7 @@ public class ShowerWinkerController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/front/winker/insert/observation", notes = "To insert Observation in Front Winker Final Report", response = HeroFinalReportShowerFrontWinkerInsertObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/front/winker/insert/observation", notes = "To insert Observation in Front Winker Final Report", response = GenericFinalReportInsertObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -364,7 +364,7 @@ public class ShowerWinkerController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/front/winker/insert/conclusion", notes = "To insert conclusion in Front Winker Final Report", response = HeroFinalReportShowerFrontWinkerInsertConclusionSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/front/winker/insert/conclusion", notes = "To insert conclusion in Front Winker Final Report", response = GenericFinalReportInsertConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -501,7 +501,7 @@ public class ShowerWinkerController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/front/winker/delete/observation", notes = "To Delete Observations from Front Winker Final Report", response = HeroFinalReportShowerFrontWinkerDeleteObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/front/winker/delete/observation", notes = "To Delete Observations from Front Winker Final Report", response = GenericFinalReportDeleteObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -648,7 +648,7 @@ public class ShowerWinkerController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/rear/winker/delete/observation", notes = "To get Rear Winker Final Report", response = HeroFinalReportShowerRearWinkerDeleteObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/rear/winker/delete/observation", notes = "To get Rear Winker Final Report", response = GenericFinalReportDeleteObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -671,7 +671,7 @@ public class ShowerWinkerController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/rear/winker/insert/analysis", notes = "To Insert Analysis in Rear Winker Final Report", response = HeroFinalReportShowerRearWinkerInsertAnalysisSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/rear/winker/insert/analysis", notes = "To Insert Analysis in Rear Winker Final Report", response = GenericFinalReportInsertAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -698,7 +698,7 @@ public class ShowerWinkerController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/rear/winker/insert/conclusion", notes = "To Insert Conclusion in Rear Winker Final Report", response = HeroFinalReportShowerRearWinkerInsertConclusionSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/rear/winker/insert/conclusion", notes = "To Insert Conclusion in Rear Winker Final Report", response = GenericFinalReportInsertConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -756,7 +756,7 @@ public class ShowerWinkerController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/rear/winker/insert/observation", notes = "To Insert Observations in Rear Winker Final Report", response = HeroFinalReportShowerRearWinkerInsertObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/rear/winker/insert/observation", notes = "To Insert Observations in Rear Winker Final Report", response = GenericFinalReportInsertObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -940,7 +940,7 @@ public class ShowerWinkerController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/get/rear/winker/analysis", notes = "To get Rear Winker Analysis in Final Report", response = HeroFinalReportShowerGetRearWinkerAnalysisSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/get/rear/winker/analysis", notes = "To get Rear Winker Analysis in Final Report", response = GenericFinalReportGetAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -966,7 +966,7 @@ public class ShowerWinkerController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/get/rear/winker/conclusion", notes = "To get conclusion in Rear Winker Final Report", response = HeroFinalReportShowerGetRearWinkerConclusionSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/get/rear/winker/conclusion", notes = "To get conclusion in Rear Winker Final Report", response = GenericFinalReportGetConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -1046,7 +1046,7 @@ public class ShowerWinkerController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/get/rear/winker/observation", notes = "To get Rear Winker Observation in Final Report", response = HeroFinalReportShowerGetRearWinkerObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/get/rear/winker/observation", notes = "To get Rear Winker Observation in Final Report", response = GenericFinalReportGetObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
