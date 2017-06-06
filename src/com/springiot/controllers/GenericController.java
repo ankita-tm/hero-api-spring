@@ -1344,7 +1344,7 @@ public class GenericController {
 	 * @return Return the response message
 	 */
 
-	@ApiOperation(value = "/final/report/get/horn/observation", notes = "To get the Final Report Observation Data of Horn", response = FinalReportGetHornObservationSwagger.class)
+	@ApiOperation(value = "/final/report/get/horn/observation", notes = "To get the Final Report Observation Data of Horn", response = GenericFinalReportGetAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -1369,7 +1369,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/insert/horn/observation", notes = "To get the Final Report Insert Observation Data of Horn", response = FinalReportInsertHornObservationSwagger.class)
+	@ApiOperation(value = "/final/report/insert/horn/observation", notes = "To get the Final Report Insert Observation Data of Horn", response = GenericFinalReportInsertObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -1541,7 +1541,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/get/lock/observation", notes = "To get the Final Report Observation", response = FinalReportGetLockObservationSwagger.class)
+	@ApiOperation(value = "/final/report/get/lock/observation", notes = "To get the Final Report Observation", response = GenericFinalReportGetObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -1566,7 +1566,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/get/relay/observation", notes = "To get the Final Report Observation", response = FinalReportGetRelayObservationSwagger.class)
+	@ApiOperation(value = "/final/report/get/relay/observation", notes = "To get the Final Report Observation", response = GenericFinalReportGetAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -1591,7 +1591,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/get/side/stand/observation", notes = "To get the Final Report Observation", response = FinalReportGetSideStandObservationSwagger.class)
+	@ApiOperation(value = "/final/report/get/side/stand/observation", notes = "To get the Final Report Observation", response = GenericFinalReportGetObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -1616,7 +1616,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/shower/get/tail/lamp/observation", notes = "To get the Final Report Observation", response = FinalReportShowerGetTailLampObservationSwagger.class)
+	@ApiOperation(value = "/final/report/shower/get/tail/lamp/observation", notes = "To get the Final Report Observation", response = GenericFinalReportGetObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -1641,7 +1641,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/get/dust/observation", notes = "To get the Final Report Observation", response = FinalReportGetDustObservationSwagger.class)
+	@ApiOperation(value = "/final/report/get/dust/observation", notes = "To get the Final Report Observation", response = GenericFinalReportGetObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -1776,7 +1776,7 @@ public class GenericController {
 	 * @return Return the response message
 	 */
 
-	@ApiOperation(value = "/final/report/get/horn/analysis", notes = "To get the Final Report Get Horn Analysis  Data ", response = FinalReportGetHornAnalysisSwagger.class)
+	@ApiOperation(value = "/final/report/get/horn/analysis", notes = "To get the Final Report Get Horn Analysis  Data ", response = GenericFinalReportGetAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -1801,7 +1801,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/insert/horn/analysis", notes = "To get the Final Report Insert Analysis Data of Horn", response = FinalReportInsertHornAnalysisSwagger.class)
+	@ApiOperation(value = "/final/report/insert/horn/analysis", notes = "To get the Final Report Insert Analysis Data of Horn", response = GenericFinalReportInsertAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -1828,7 +1828,7 @@ public class GenericController {
 	 * @return Return the response message
 	 */
 
-	@ApiOperation(value = "/final/report/get/horn/conclusion", notes = "To get the Final Report Get Horn Conclusion  Data ", response = FinalReportGetHornConclusionSwagger.class)
+	@ApiOperation(value = "/final/report/get/horn/conclusion", notes = "To get the Final Report Get Horn Conclusion  Data ", response = GenericFinalReportGetConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -1853,7 +1853,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/insert/horn/conclusion", notes = "To get the Final Report Insert Conclusion Data of Horn", response = FinalReportInsertHornConclusionSwagger.class)
+	@ApiOperation(value = "/final/report/insert/horn/conclusion", notes = "To get the Final Report Insert Conclusion Data of Horn", response = GenericFinalReportInsertConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -1879,7 +1879,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/delete/horn/observation", notes = "To get the Final Report Insert Conclusion Data of Horn", response = FinalReportDeleteHornObservationSwagger.class)
+	@ApiOperation(value = "/final/report/delete/horn/observation", notes = "To get the Final Report Insert Conclusion Data of Horn", response = GenericFinalReportDeleteObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -2205,7 +2205,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/get/tail/lamp/analysis", notes = "Hero Final Report Shower Get Tail Lamp Analysis", response = HeroFinalReportShowerGetTailLampAnalysisSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/get/tail/lamp/analysis", notes = "Hero Final Report Shower Get Tail Lamp Analysis", response = GenericFinalReportGetAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -2257,7 +2257,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/get/tail/lamp/conclusion", notes = "Hero component Get Default Conclusion", response = HeroFinalReportShowerGetTailLampConclusionSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/get/tail/lamp/conclusion", notes = "Hero component Get Default Conclusion", response = GenericFinalReportGetConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -2532,7 +2532,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/tail/lamp/insert/analysis", notes = "Insert Hero Final Report Shower Get Tail Lamp Analysis", response = HeroFinalReportShowerTailLampInsertAnalysisSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/tail/lamp/insert/analysis", notes = "Insert Hero Final Report Shower Get Tail Lamp Analysis", response = GenericFinalReportInsertAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -2609,7 +2609,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/tail/lamp/insert/conclusion", notes = "Hero Final Report Shower Insert Tail Lamp Conclusion.", response = HeroFinalReportShowerTailLampInsertConclusionSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/tail/lamp/insert/conclusion", notes = "Hero Final Report Shower Insert Tail Lamp Conclusion.", response = GenericFinalReportInsertConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -2636,7 +2636,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/tail/lamp/insert/observation", notes = "Hero Final Report Shower Insert Tail Lamp Observation.", response = HeroFinalReportShowerTailLampInsertObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/tail/lamp/insert/observation", notes = "Hero Final Report Shower Insert Tail Lamp Observation.", response = GenericFinalReportInsertObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -2778,7 +2778,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/delete/tail/lamp/observation", notes = "Delete Hero Final Report Shower  Tail Lamp Observation.", response = HeroFinalReportShowerDeleteTailLampObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/delete/tail/lamp/observation", notes = "Delete Hero Final Report Shower  Tail Lamp Observation.", response = GenericFinalReportDeleteObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -3044,7 +3044,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/get/relay/analysis", notes = "To get Relay Final Report Analysis", response = HeroFinalReportGetRelayAnalysisSwagger.class)
+	@ApiOperation(value = "/hero/final/report/get/relay/analysis", notes = "To get Relay Final Report Analysis", response = GenericFinalReportGetAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -3069,7 +3069,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/get/relay/conclusion", notes = "To get Relay Final Report Conclusion", response = HeroFinalReportGetRelayConclusionSwagger.class)
+	@ApiOperation(value = "/hero/final/report/get/relay/conclusion", notes = "To get Relay Final Report Conclusion", response = GenericFinalReportInsertObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -3201,7 +3201,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/insert/relay/analysis", notes = "To insert Relay Final Report Analysis", response = HeroFinalReportInsertRelayAnalysisSwagger.class)
+	@ApiOperation(value = "/hero/final/report/insert/relay/analysis", notes = "To insert Relay Final Report Analysis", response = GenericFinalReportInsertAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -3227,7 +3227,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/insert/relay/conclusion", notes = "To insert Relay Final Report Conclusion ", response = HeroFinalReportInsertRelayConclusionSwagger.class)
+	@ApiOperation(value = "/hero/final/report/insert/relay/conclusion", notes = "To insert Relay Final Report Conclusion ", response = GenericFinalReportInsertConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -3254,7 +3254,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/insert/relay/observation", notes = "To insert Relay Final Report Observation", response = HeroFinalReportInsertRelayObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/insert/relay/observation", notes = "To insert Relay Final Report Observation", response = GenericFinalReportInsertObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -3335,7 +3335,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/delete/relay/observation", notes = "To delete Relay Final Report Observation", response = HeroFinalReportDeleteRelayObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/delete/relay/observation", notes = "To delete Relay Final Report Observation", response = GenericFinalReportDeleteObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -3604,7 +3604,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/get/side/stand/analysis", notes = "To get Side Stand Final Report Analysis", response = HeroFinalReportGetSideStandAnalysisSwagger.class)
+	@ApiOperation(value = "/hero/final/report/get/side/stand/analysis", notes = "To get Side Stand Final Report Analysis", response = GenericFinalReportInsertAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -3629,7 +3629,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/get/side/stand/conclusion", notes = "To get Side Stand Final Report Conclusion", response = HeroFinalReportGetSideStandConclusionSwagger.class)
+	@ApiOperation(value = "/hero/final/report/get/side/stand/conclusion", notes = "To get Side Stand Final Report Conclusion", response = GenericFinalReportGetConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -3764,7 +3764,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/insert/side/stand/analysis", notes = "To insert Side Stand Final Report Analysis", response = HeroFinalReportInsertSideStandAnalysisSwagger.class)
+	@ApiOperation(value = "/hero/final/report/insert/side/stand/analysis", notes = "To insert Side Stand Final Report Analysis", response = GenericFinalReportInsertAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -3791,7 +3791,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/insert/side/stand/conclusion", notes = "To insert Side Stand Final Report Conclusion", response = HeroFinalReportInsertSideStandConclusionSwagger.class)
+	@ApiOperation(value = "/hero/final/report/insert/side/stand/conclusion", notes = "To insert Side Stand Final Report Conclusion", response = GenericFinalReportInsertConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -3818,7 +3818,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/insert/side/stand/observation", notes = "To insert Side Stand Final Report Observation ", response = HeroFinalReportInsertSideStandObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/insert/side/stand/observation", notes = "To insert Side Stand Final Report Observation ", response = GenericFinalReportInsertObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -3966,7 +3966,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/delete/side/stand/observation", notes = "To delete Side Stand Final Report Observation", response = HeroFinalReportDeleteSideStandObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/delete/side/stand/observation", notes = "To delete Side Stand Final Report Observation", response = GenericFinalReportDeleteObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -4202,7 +4202,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/dust/get/head/lamp/analysis", notes = "To get Dust Head Final Report Analysis", response = FinalReportDustGetHeadLampAnalysisSwagger.class)
+	@ApiOperation(value = "/final/report/dust/get/head/lamp/analysis", notes = "To get Dust Head Final Report Analysis", response = GenericFinalReportGetAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -4227,7 +4227,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/dust/get/head/lamp/conclusion", notes = "To get Dust Head Final Report Conclusion", response = FinalReportDustGetHeadLampConclusionSwagger.class)
+	@ApiOperation(value = "/final/report/dust/get/head/lamp/conclusion", notes = "To get Dust Head Final Report Conclusion", response = GenericFinalReportGetConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -4306,7 +4306,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/dust/get/head/lamp/observation", notes = "To get Dust Head Final Report Observation", response = FinalReportDustGetHeadLampObservationSwagger.class)
+	@ApiOperation(value = "/final/report/dust/get/head/lamp/observation", notes = "To get Dust Head Final Report Observation", response = GenericFinalReportGetObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -4442,7 +4442,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/dust/insert/head/lamp/analysis", notes = "Insert Hero Final Report Dust Insert Head Lamp Analysis", response = FinalReportDustInsertHeadLampAnalysisSwagger.class)
+	@ApiOperation(value = "/final/report/dust/insert/head/lamp/analysis", notes = "Insert Hero Final Report Dust Insert Head Lamp Analysis", response = GenericFinalReportInsertAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -4495,7 +4495,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/dust/insert/head/lamp/conclusion", notes = "Hero Final Report Shower Insert Tail Lamp Conclusion.", response = FinalReportDustInsertHeadLampConclusionSwagger.class)
+	@ApiOperation(value = "/final/report/dust/insert/head/lamp/conclusion", notes = "Hero Final Report Shower Insert Tail Lamp Conclusion.", response = GenericFinalReportInsertConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -4522,7 +4522,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/dust/insert/head/lamp/observation", notes = "Hero Final Report Shower Insert Tail Lamp Observation.", response = FinalReportDustInsertHeadLampObservationSwagger.class)
+	@ApiOperation(value = "/final/report/dust/insert/head/lamp/observation", notes = "Hero Final Report Shower Insert Tail Lamp Observation.", response = GenericFinalReportInsertObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -4670,7 +4670,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/dust/delete/head/lamp/observation", notes = "To Delete Final Report Dust Head Image", response = FinalReportDustDeleteHeadLampObservationSwagger.class)
+	@ApiOperation(value = "/final/report/dust/delete/head/lamp/observation", notes = "To Delete Final Report Dust Head Image", response = GenericFinalReportDeleteObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -4718,7 +4718,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/dust/get/tail/lamp/analysis", notes = "To get Dust Tail Final Report Analysis", response = FinalReportDustGetTailLampAnalysisSwagger.class)
+	@ApiOperation(value = "/final/report/dust/get/tail/lamp/analysis", notes = "To get Dust Tail Final Report Analysis", response = GenericFinalReportGetAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -4743,7 +4743,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/dust/get/tail/lamp/conclusion", notes = "To get Dust Tail Final Report Conclusion", response = FinalReportDustGetTailLampConclusionSwagger.class)
+	@ApiOperation(value = "/final/report/dust/get/tail/lamp/conclusion", notes = "To get Dust Tail Final Report Conclusion", response = GenericFinalReportGetConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -4821,7 +4821,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/dust/get/tail/lamp/observation", notes = "To get Dust Tail Final Report Observation", response = FinalReportDustGetTailLampObservationSwagger.class)
+	@ApiOperation(value = "/final/report/dust/get/tail/lamp/observation", notes = "To get Dust Tail Final Report Observation", response = GenericFinalReportGetObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -4957,7 +4957,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/dust/insert/tail/lamp/analysis", notes = "Insert Hero Final Report Dust Insert Tail Lamp Analysis", response = FinalReportDustInsertTailLampAnalysisSwagger.class)
+	@ApiOperation(value = "/final/report/dust/insert/tail/lamp/analysis", notes = "Insert Hero Final Report Dust Insert Tail Lamp Analysis", response = GenericFinalReportInsertAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -5010,7 +5010,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/dust/insert/tail/lamp/conclusion", notes = "Hero Final Report Dust Insert Tail Lamp Conclusion.", response = FinalReportDustInsertTailLampConclusionSwagger.class)
+	@ApiOperation(value = "/final/report/dust/insert/tail/lamp/conclusion", notes = "Hero Final Report Dust Insert Tail Lamp Conclusion.", response = GenericFinalReportInsertConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -5037,7 +5037,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/dust/insert/tail/lamp/observation", notes = "Hero Final Report Dust Insert Tail Lamp Observation.", response = FinalReportDustInsertTailLampObservationSwagger.class)
+	@ApiOperation(value = "/final/report/dust/insert/tail/lamp/observation", notes = "Hero Final Report Dust Insert Tail Lamp Observation.", response = GenericFinalReportInsertObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -5183,7 +5183,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/dust/delete/tail/lamp/observation", notes = "To Delete Final Report Dust Tail Observation", response = FinalReportDustDeleteTailLampObservationSwagger.class)
+	@ApiOperation(value = "/final/report/dust/delete/tail/lamp/observation", notes = "To Delete Final Report Dust Tail Observation", response = GenericFinalReportDeleteObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -5256,7 +5256,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/shower/get/head/lamp/analysis", notes = "To get Shower Head Final Report Analysis", response = FinalReportShowerGetHeadLampAnalysisSwagger.class)
+	@ApiOperation(value = "/final/report/shower/get/head/lamp/analysis", notes = "To get Shower Head Final Report Analysis", response = GenericFinalReportGetAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -5282,7 +5282,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/shower/get/head/lamp/conclusion", notes = "To get Shower Head Final Report Conclusion", response = FinalReportShowerGetHeadLampConclusionSwagger.class)
+	@ApiOperation(value = "/final/report/shower/get/head/lamp/conclusion", notes = "To get Shower Head Final Report Conclusion", response = GenericFinalReportGetConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -5360,7 +5360,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/shower/get/head/lamp/observation", notes = "To get Shower Head Final Report Observation", response = FinalReportShowerGetHeadLampObservationSwagger.class)
+	@ApiOperation(value = "/final/report/shower/get/head/lamp/observation", notes = "To get Shower Head Final Report Observation", response = GenericFinalReportGetObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -5496,7 +5496,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/shower/insert/head/lamp/analysis", notes = "Insert Hero Final Report Shower Insert Head Lamp Analysis", response = FinalReportShowerInsertHeadLampAnalysisSwagger.class)
+	@ApiOperation(value = "/final/report/shower/insert/head/lamp/analysis", notes = "Insert Hero Final Report Shower Insert Head Lamp Analysis", response = GenericFinalReportInsertAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -5550,7 +5550,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/shower/insert/head/lamp/conclusion", notes = "Hero Final Report Shower Insert Head Lamp Conclusion.", response = FinalReportShowerInsertHeadLampConclusionSwagger.class)
+	@ApiOperation(value = "/final/report/shower/insert/head/lamp/conclusion", notes = "Hero Final Report Shower Insert Head Lamp Conclusion.", response = GenericFinalReportInsertConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -5577,7 +5577,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/shower/insert/head/lamp/observation", notes = "Hero Final Report Shower Insert Head Lamp Observation.", response = FinalReportShowerInsertHeadLampObservationSwagger.class)
+	@ApiOperation(value = "/final/report/shower/insert/head/lamp/observation", notes = "Hero Final Report Shower Insert Head Lamp Observation.", response = GenericFinalReportInsertObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -5732,7 +5732,7 @@ public class GenericController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/final/report/shower/delete/head/lamp/observation", notes = "To Delete Final Report Shower Head Observation", response = FinalReportShowerDeleteHeadLampObservationSwagger.class)
+	@ApiOperation(value = "/final/report/shower/delete/head/lamp/observation", notes = "To Delete Final Report Shower Head Observation", response = GenericFinalReportDeleteObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),

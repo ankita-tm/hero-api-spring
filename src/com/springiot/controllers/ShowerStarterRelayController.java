@@ -78,7 +78,7 @@ public class ShowerStarterRelayController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/starter/get/relay/analysis", notes = "To get analysis in Starter Relay Final Report", response = HeroFinalReportShowerStarterGetRelayAnalysisSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/starter/get/relay/analysis", notes = "To get analysis in Starter Relay Final Report", response = GenericFinalReportGetAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -104,7 +104,7 @@ public class ShowerStarterRelayController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/starter/get/relay/conclusion", notes = "To get conclusion in Starter Relay Final Report", response = HeroFinalReportShowerStarterGetRelayConclusionSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/starter/get/relay/conclusion", notes = "To get conclusion in Starter Relay Final Report", response = GenericFinalReportGetConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -184,7 +184,7 @@ public class ShowerStarterRelayController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/starter/get/relay/observation", notes = "To get  Observation in Shower Starter Final Report", response = HeroFinalReportShowerStarterGetRelayObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/starter/get/relay/observation", notes = "To get  Observation in Shower Starter Final Report", response = GenericFinalReportGetObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -287,7 +287,7 @@ public class ShowerStarterRelayController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/starter/insert/relay/analysis", notes = "To insert Analysis in Shower Starter Final Report", response = HeroFinalReportShowerStarterInsertRelayAnalysisSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/starter/insert/relay/analysis", notes = "To insert Analysis in Shower Starter Final Report", response = GenericFinalReportInsertConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -314,7 +314,7 @@ public class ShowerStarterRelayController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/starter/insert/relay/conclusion", notes = "To insert conclusion in Shower Starter Final Report", response = HeroFinalReportShowerStarterInsertRelayConclusionSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/starter/insert/relay/conclusion", notes = "To insert conclusion in Shower Starter Final Report", response = GenericFinalReportInsertConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -372,7 +372,7 @@ public class ShowerStarterRelayController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/starter/insert/relay/observation", notes = "To insert Observation in Shower Starter Final Report", response = HeroFinalReportShowerStarterInsertRelayObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/starter/insert/relay/observation", notes = "To insert Observation in Shower Starter Final Report", response = GenericFinalReportInsertObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -478,7 +478,7 @@ public class ShowerStarterRelayController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/shower/starter/delete/relay/observation", notes = "To Delete Observations from Shower Starter Final Report", response = HeroFinalReportShowerStarterDeleteRelayObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/shower/starter/delete/relay/observation", notes = "To Delete Observations from Shower Starter Final Report", response = GenericFinalReportDeleteObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),

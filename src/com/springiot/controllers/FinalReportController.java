@@ -393,5 +393,86 @@ public class FinalReportController {
 		Message message = finalReportServices.submitLockinalReport(map, req, res);
 		return message;
 	}
+	
+	/**
+	 * To Download final report of Speedometer for Shower testing in Pdf.
+	 * 
+	 * @param map : Here pass all the required parameters.
+	 * @param request : To get user_key, user_id from request header.
+	 * @param response : To get response for returning on API call.
+	 * 
+	 * @return Return the response message
+	 */
+	@ApiOperation(value = "/submit/shower/spedometer/final/report", notes = "To Submit the Final Report to Get .pdf of Speedometer.",response=SubmitLockFinalReportSwagger.class)
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
+			@ApiResponse(code = 201, message = " created successfully"),
+			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
+			@ApiResponse(code = 409, message = "ID already taken") })
+	@ApiImplicitParams({
+			@ApiImplicitParam(name = "token", value = "Token is generated to authenticate the device", required = true, access = "query", paramType = "query"),
+			@ApiImplicitParam(name = "start_date", value = "Required start_date."),
+			@ApiImplicitParam(name = "end_date", value = "Required end_date."),
+			@ApiImplicitParam(name = "vendor_code", value = "Required vendor_code."),
+			@ApiImplicitParam(name = "test_number", value = "Required testing_version.") })
+	@RequestMapping(value = "/submit/shower/spedometer/final/report", method = RequestMethod.POST)
+	public @ResponseBody Message submitShowerSpedometerFinalReport(@RequestParam Map<String, String> map, HttpServletRequest req,
+			HttpServletResponse res) {
+		Message message = finalReportServices.submitShowerSpedometerFinalReport(map, req, res);
+		return message;
+	}
+	
+	/**
+	 * To Download final report of Front Winker for Dust testing in Pdf.
+	 * 
+	 * @param map : Here pass all the required parameters.
+	 * @param request : To get user_key, user_id from request header.
+	 * @param response : To get response for returning on API call.
+	 * 
+	 * @return Return the response message
+	 */
+	@ApiOperation(value = "/submit/dust/winker/front/final/report", notes = "To Submit the Final Report to Get .pdf of Speedometer.",response=SubmitLockFinalReportSwagger.class)
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
+			@ApiResponse(code = 201, message = " created successfully"),
+			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
+			@ApiResponse(code = 409, message = "ID already taken") })
+	@ApiImplicitParams({
+			@ApiImplicitParam(name = "token", value = "Token is generated to authenticate the device", required = true, access = "query", paramType = "query"),
+			@ApiImplicitParam(name = "start_date", value = "Required start_date."),
+			@ApiImplicitParam(name = "end_date", value = "Required end_date."),
+			@ApiImplicitParam(name = "vendor_code", value = "Required vendor_code."),
+			@ApiImplicitParam(name = "test_number", value = "Required testing_version.") })
+	@RequestMapping(value = "/submit/dust/winker/front/final/report", method = RequestMethod.POST)
+	public @ResponseBody Message submitDustWinkerFrontFinalReport(@RequestParam Map<String, String> map, HttpServletRequest req,
+			HttpServletResponse res) {
+		Message message = finalReportServices.submitDustWinkerFrontFinalReport(map, req, res);
+		return message;
+	}
 
+	/**
+	 * To Download final report of Speedometer for Dust testing in Pdf.
+	 * 
+	 * @param map : Here pass all the required parameters.
+	 * @param request : To get user_key, user_id from request header.
+	 * @param response : To get response for returning on API call.
+	 * 
+	 * @return Return the response message
+	 */
+	@ApiOperation(value = "/submit/dust/winker/rear/final/report", notes = "To Submit the Final Report to Get .pdf of Speedometer.",response=SubmitLockFinalReportSwagger.class)
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
+			@ApiResponse(code = 201, message = " created successfully"),
+			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
+			@ApiResponse(code = 409, message = "ID already taken") })
+	@ApiImplicitParams({
+			@ApiImplicitParam(name = "token", value = "Token is generated to authenticate the device", required = true, access = "query", paramType = "query"),
+			@ApiImplicitParam(name = "start_date", value = "Required start_date."),
+			@ApiImplicitParam(name = "end_date", value = "Required end_date."),
+			@ApiImplicitParam(name = "vendor_code", value = "Required vendor_code."),
+			@ApiImplicitParam(name = "test_number", value = "Required testing_version.") })
+	@RequestMapping(value = "/submit/dust/winker/rear/final/report", method = RequestMethod.POST)
+	public @ResponseBody Message submitDustWinkerRearFinalReport(@RequestParam Map<String, String> map, HttpServletRequest req,
+			HttpServletResponse res) {
+		Message message = finalReportServices.submitDustWinkerRearFinalReport(map, req, res);
+		return message;
+	}
+	
 }

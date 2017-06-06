@@ -592,6 +592,31 @@ public class AndroidService {
 						finalNotificationDataList.add(notificationDataListMap);
 					}
 						continue;
+						
+					case 1046: {
+
+						String notification = "Test for " + notificationDataListMap.get("machine_name") 
+						+ " and part code " + notificationDataListMap.get("part_code") 
+						+ " is completed on " + notificationDataListMap.get("test_end_date") 
+						+ " and Final Report Created.";
+						
+						notificationDataListMap.put("notification", notification);
+						finalNotificationDataList.add(notificationDataListMap);
+					}
+						continue;
+						
+					case 1047: {
+
+						String notification = "Test for " + notificationDataListMap.get("machine_name") 
+								+ " and part code " + notificationDataListMap.get("part_code") 
+								+ " is completed on " + notificationDataListMap.get("test_end_date") 
+								+ " and Final Report Created.";
+						
+						notificationDataListMap.put("notification", notification);
+						finalNotificationDataList.add(notificationDataListMap);
+					}
+						continue;
+						
 					case 1051: {
 
 						String notification = "Test for " + notificationDataListMap.get("machine_name")
@@ -611,7 +636,7 @@ public class AndroidService {
 						continue;
 					case 1053: {
 
-						String notification = "" + notificationDataListMap.get("testing_name ")
+						String notification = "" + notificationDataListMap.get("testing_name")
 								+ " testing for component " + notificationDataListMap.get("machine_name")
 								+ " and part code " + notificationDataListMap.get("part_code") + "is not started.";
 						notificationDataListMap.put("notification", notification);
@@ -652,6 +677,40 @@ public class AndroidService {
 						String notification = "" + notificationDataListMap.get("notification_code_description")
 						+ "has been done for vendor name " + notificationDataListMap.get("vendor_name")
 						+ "and part code " + notificationDataListMap.get("part_code") + ".";
+						
+						notificationDataListMap.put("notification", notification);
+						finalNotificationDataList.add(notificationDataListMap);
+					}
+						continue;
+
+					case 1058: {
+
+						String notification = "" + notificationDataListMap.get("notification_code_description")
+						+ "has been done for vendor name " + notificationDataListMap.get("vendor_name")
+						+ "and part code " + notificationDataListMap.get("part_code") + ".";
+					
+						notificationDataListMap.put("notification", notification);
+						finalNotificationDataList.add(notificationDataListMap);
+					}
+						continue;
+
+					case 1059: {
+
+						String notification = "" + notificationDataListMap.get("notification_code_description")
+						+ "has been done for vendor name " + notificationDataListMap.get("vendor_name")
+						+ "and part code " + notificationDataListMap.get("part_code") + ".";
+						
+						notificationDataListMap.put("notification", notification);
+						finalNotificationDataList.add(notificationDataListMap);
+					}
+						continue;
+					
+					case 1060: {
+
+						String notification = "" + notificationDataListMap.get("notification_code_description")
+						+ "has been done for vendor name " + notificationDataListMap.get("vendor_name")
+						+ "and part code " + notificationDataListMap.get("part_code") + ".";
+					
 						notificationDataListMap.put("notification", notification);
 						finalNotificationDataList.add(notificationDataListMap);
 					}

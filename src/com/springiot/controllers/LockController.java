@@ -176,7 +176,7 @@ public class LockController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/lock/get/analysis", notes = "To get analysis in Lock Final Report",response=HeroFinalReportLockGetAnalysisSwagger.class)
+	@ApiOperation(value = "/hero/final/report/lock/get/analysis", notes = "To get analysis in Lock Final Report",response=GenericFinalReportGetAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -201,7 +201,7 @@ public class LockController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/lock/get/conclusion", notes = "To get conclusion of Lock Final Report",response=HeroFinalReportLockGetConclusionSwagger.class)
+	@ApiOperation(value = "/hero/final/report/lock/get/conclusion", notes = "To get conclusion of Lock Final Report",response=GenericFinalReportGetConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -254,7 +254,7 @@ public class LockController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/lock/get/observation", notes = "To get  Observation of Lock Final Report",response=HeroFinalReportLockGetObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/lock/get/observation", notes = "To get  Observation of Lock Final Report",response=GenericFinalReportGetObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -329,7 +329,7 @@ public class LockController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/lock/insert/analysis", notes = "To insert Analysis in Lock Final Report",response=HeroFinalReportLockInsertAnalysisSwagger.class)
+	@ApiOperation(value = "/hero/final/report/lock/insert/analysis", notes = "To insert Analysis in Lock Final Report",response=GenericFinalReportInsertAnalysisSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -355,7 +355,7 @@ public class LockController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/lock/insert/conclusion", notes = "To insert conclusion in Lock Final Report",response=HeroFinalReportLockInsertConclusionSwagger.class)
+	@ApiOperation(value = "/hero/final/report/lock/insert/conclusion", notes = "To insert conclusion in Lock Final Report",response=GenericFinalReportInsertConclusionSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -412,7 +412,7 @@ public class LockController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/lock/insert/observation", notes = "To insert Observation in Lock Final Report",response=HeroFinalReportLockInsertObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/lock/insert/observation", notes = "To insert Observation in Lock Final Report",response=GenericFinalReportInsertObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
@@ -570,7 +570,7 @@ public class LockController {
 	 * 
 	 * @return Return the response message
 	 */
-	@ApiOperation(value = "/hero/final/report/lock/delete/observation", notes = "To Delete Observations from Lock Final Report",response=HeroFinalReportLockDeleteObservationSwagger.class)
+	@ApiOperation(value = "/hero/final/report/lock/delete/observation", notes = "To Delete Observations from Lock Final Report",response=GenericFinalReportDeleteObservationSwagger.class)
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Record created successfully"),
 			@ApiResponse(code = 201, message = " created successfully"),
 			@ApiResponse(code = 400, response = Error.class, responseContainer = "List", message = "There was something wrong in the request and therefore could not be processed (headers, json syntax/content)"),
